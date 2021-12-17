@@ -32,31 +32,74 @@ M=D
 
 //     while (R0 > 0) {
 
-//       (R16384 + R2);
+//       R50 = (R16384 + R2);
 @16384
 D=A
 @0
 D=D+M
+@50
+M=D
 
+// read keyboard
+@24576
+D=M
+
+// If the currently pressed key any, goto a
+//       if ()
+
+@21
+D;JGT
+@22
+D;JEQ
+
+//       {
+
+//       R16384 + R50 = #000000;
 // 設定成黑色
+@50
+D=M
 A=D
 M=-1
 
 @16384
 
-
-//       R0 = R0 - 1;
+//         R0 = R0 - 1;
 @1
 D=A
 @0
 M=M-D
 
-//     }
 @0
 D=M
 @10
-D;JGT
+D;JGE
+
+//       } else {
+
+//         R16384 + R50 = #ffffff;
+// 設定成白色
+@50
+D=M
+A=D
+M=0
+
+@16384
+
+//         R0 = R0 + 1;
+@1
+D=A
+@0
+M=M+D
+
+@16384
+D=A
+@0
+D=M-D
+@10
+D;JGE
+
+//       }
 
 // 鎖定跳躍位置不讓ROM記憶體亂移動
-@24
+@10
 0;JMP
