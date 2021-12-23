@@ -8,24 +8,35 @@
 
 // Put your code here.
 
+//     int R2 = 0;
+@0
+D=A
+@2
+M=D
+
+//
+@1
+D=M
+@16
+D;JEQ
 
 //     while (R0 > 0) {
-//       R2 = R2 + R1;
-@1
+
+//       R2 = R2 + R0;
+@0
 D=M
 @2
 M=D+M
 
-//       R0 = R0 - 1;
+//       R1 = R1 - 1;
 @1
 D=A
-@0
+@1
 M=M-D
 
 //     }
-@0
 D=M
-@12
+@8
 D;JGT
 
 // }
