@@ -9,25 +9,6 @@
 // Put your code here.
 
 
-// int main() {
-//     int R0 = 3;
-@3
-D=A
-@0
-M=D
-
-//     int R1 = 5;
-@5
-D=A
-@1
-M=D
-
-//     int R2 = 0;
-@0
-D=A
-@2
-M=D
-
 //     while (R0 > 0) {
 //       R2 = R2 + R1;
 @1
@@ -46,9 +27,5 @@ M=M-D
 D=M
 @12
 D;JGT
-
-// 鎖定跳躍位置不讓ROM記憶體亂移動
-@24
-0;JMP
 
 // }
