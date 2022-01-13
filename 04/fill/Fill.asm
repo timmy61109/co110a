@@ -47,7 +47,7 @@ D=M
 // If the currently pressed key any, goto a
 //       if ()
 
-@21
+@37
 D;JGT
 @22
 D;JEQ
@@ -74,7 +74,9 @@ D=M
 @10
 D;JGE
 
-//       } else {
+//       }
+
+//       else {
 
 //         R16384 + R50 = #ffffff;
 // 設定成白色
@@ -94,12 +96,10 @@ M=M+D
 @16384
 D=A
 @0
-D=M-D
+D=D-M
 @10
 D;JGE
 
 //       }
-
-// 鎖定跳躍位置不讓ROM記憶體亂移動
 @10
 0;JMP
